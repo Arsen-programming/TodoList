@@ -1,69 +1,126 @@
-body{
-    background-color: hsl(0, 0%, 10%);
+body {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.to-do-list{
-    font-family: Arial, sans-serif;
+
+.to-do-list {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
     text-align: center;
-    margin-top: 100px;
+    color: #333;
+    margin-bottom: 25px;
 }
-h1{
-    font-size: 4rem;
-    color: white;
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
 }
-button{
-    font-size: 1.7rem;
-    font-weight: bold;
+
+.task-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.task-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+.date-input {
+    width: 160px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.date-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+.add-button {
     padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.5s ease;
+    transition: 0.3s;
 }
-.add-button{
-    background-color: hsl(125, 47%, 54%);
+
+.add-button:hover {
+    background-color: #0056b3;
 }
-.add-button:hover{
-    background-color: hsl(125, 47%, 44%);
-}
-.delete-button{
-    background-color: hsl(10, 90%, 50%);
-}
-.delete-button:hover{
-    background-color: hsl(10, 90%, 40%);
-}
-.move-button{
-    background-color: hsl(207, 90%, 64%);
-}
-.move-button:hover{
-    background-color: hsl(207, 90%, 54%);
-}
-input[type="text"]{
-    font-size: 1.6rem;
-    padding: 10px;
-    border: 2px solid hsla(0, 0%, 80%, 0.5);
-    border-radius: 5px;
-    color: hsla(0, 0%, 0%, 0.5);
-}
-ol{
+
+.task-list {
+    list-style: none;
     padding: 0;
 }
-li{
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 15px;
-    background-color: hsl(0, 0%, 97%);
-    margin-bottom: 10px;
-    border: 3px solid hsla(0, 0%, 85%, 0.75);
-    border-radius: 5px;
+
+.task {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    border-radius: 10px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
+    transition: 0.3s;
+    border-left: 5px solid transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-.text{
-    flex: 1;
+
+.overdue {
+    border-left-color: #ff4d4d; /* красная линия для просрочки */
 }
-.delete-button, .move-button{
-    padding: 8px 12px;
-    font-size: 1.4rem;
-    margin-left: 10px;
+
+.done {
+    border-left-color: transparent; /* убираем красную линию */
+    color: #555;
+    text-decoration: line-through;
+    background-color: #f9f9f9; /* оставляем прежний фон */
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-text {
+    font-weight: 500;
+}
+
+.task-deadline {
+    font-size: 14px;
+    color: #888;
+}
+
+.task-buttons button {
+    margin-left: 6px;
+    background-color: #e0e0e0;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task-buttons button:hover {
+    background-color: #d1d1d1;
 }
